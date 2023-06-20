@@ -1,0 +1,9 @@
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/tutorialUI.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/install.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/install/local.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/install/strip.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/tutorialUI_autogen_timestamp_deps.dir
+/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/CMakeFiles/tutorialUI_autogen.dir
