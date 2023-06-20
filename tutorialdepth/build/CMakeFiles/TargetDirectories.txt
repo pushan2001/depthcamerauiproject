@@ -1,0 +1,3 @@
+/home/alam/depthcamerauiproject/tutorialdepth/build/CMakeFiles/TutorialDepth.dir
+/home/alam/depthcamerauiproject/tutorialdepth/build/CMakeFiles/edit_cache.dir
+/home/alam/depthcamerauiproject/tutorialdepth/build/CMakeFiles/rebuild_cache.dir
