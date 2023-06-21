@@ -8,9 +8,22 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // Connect the QComboBox signal to the updateFrameType slot
+    connect(ui->frameSelectionBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateFrameType(int)));
+
     // Initialize RealSense pipeline
     rs2::config cfg;
-    cfg.enable_stream(RS2_STREAM_DEPTH, 848, 480, RS2_FORMAT_Z16, 30);
+    switch(currentFrameType){
+    case FrameType::DEPTH:
+        cfg.enable_stream(RS2_STREAM_DEPTH, 848, 480, RS2_FORMAT_Z16, 30);
+        break;
+
+    case FrameType::COLOR:
+        cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_RGB8, 30);
+        break;
+    }
+
+
     pipe.start(cfg);
 
     // Set up the timer to call updateFrame 30 times per second
@@ -27,17 +40,62 @@ MainWindow::~MainWindow()
 void MainWindow::updateFrame()
 {
     // Capture a frame from the camera, similar to what your existing main function does
-    rs2::align align_to(RS2_STREAM_INFRARED);
+    rs2::align align_to(RS2_STREAM_COLOR);
     auto data = pipe.wait_for_frames();
     data = align_to.process(data);
-    auto dep_frame = data.get_depth_frame();
+
+    // Check if the frame is available.
+    if (!data) {
+        qDebug() << "No data from frame";
+        return;
+    }
+
+    rs2::frame frame;
+    switch (currentFrameType) {
+    case FrameType::DEPTH:
+        // Make sure depth frame exists before getting it
+        if(data.first_or_default(RS2_STREAM_DEPTH)){
+            frame = data.get_depth_frame(); // Find and colorize the depth data
+        } else {
+            qDebug() << "Depth frame not found";
+            return;
+        }
+        break;
+
+    case FrameType::COLOR:
+        // Make sure color frame exists before getting it
+        if(data.first_or_default(RS2_STREAM_COLOR)){
+            frame = data.get_color_frame(); // Find the color data
+        } else {
+            qDebug() << "Color frame not found";
+            return;
+        }
+        break;
+
+        // Handle other frame types as needed
+    }
 
     // Convert the frame to a cv::Mat
-    cv::Mat dep_mat = frame_to_mat(dep_frame);
+    cv::Mat dep_mat = frame_to_mat(frame);
 
     // Display the image
     displayImage(dep_mat);
 }
+
+
+void MainWindow::updateFrameType(int index) {
+    switch(index) {
+    case 0:
+        currentFrameType = FrameType::DEPTH;
+        break;
+    case 1:
+        currentFrameType = FrameType::COLOR;
+        break;
+        // Handle other frame types as needed
+    }
+
+}
+
 
 void MainWindow::displayImage(const cv::Mat &img)
 {

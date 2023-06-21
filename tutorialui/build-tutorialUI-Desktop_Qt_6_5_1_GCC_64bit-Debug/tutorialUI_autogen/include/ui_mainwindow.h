@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -24,6 +25,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QLabel *imageLabel;
+    QComboBox *frameSelectionBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,6 +39,11 @@ public:
         imageLabel = new QLabel(centralwidget);
         imageLabel->setObjectName("imageLabel");
         imageLabel->setGeometry(QRect(0, 30, 848, 480));
+        frameSelectionBox = new QComboBox(centralwidget);
+        frameSelectionBox->addItem(QString());
+        frameSelectionBox->addItem(QString());
+        frameSelectionBox->setObjectName("frameSelectionBox");
+        frameSelectionBox->setGeometry(QRect(750, 70, 79, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -55,6 +62,9 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         imageLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        frameSelectionBox->setItemText(0, QCoreApplication::translate("MainWindow", "Depth", nullptr));
+        frameSelectionBox->setItemText(1, QCoreApplication::translate("MainWindow", "Colour", nullptr));
+
     } // retranslateUi
 
 };

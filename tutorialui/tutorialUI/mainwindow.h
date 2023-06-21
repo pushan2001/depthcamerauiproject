@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTimer> // Include QTimer for updating frames
+#include <QTimer>
 #include <opencv2/opencv.hpp>
 #include <librealsense2/rs.hpp>
 
@@ -15,6 +15,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    enum class FrameType {
+        DEPTH,
+        COLOR
+        // Add other frame types as needed
+    };
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -28,9 +34,10 @@ private:
     Ui::MainWindow *ui;
     rs2::pipeline pipe; // Pipeline for RealSense
     QTimer *timer; // Timer for updating frames
+    FrameType currentFrameType = FrameType::DEPTH; // Variable to hold the current frame type
 
-
-
+private slots:
+    void updateFrameType(int index);
 };
 
 #endif // MAINWINDOW_H
