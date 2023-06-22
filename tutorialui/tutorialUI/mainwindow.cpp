@@ -2,6 +2,29 @@
 #include "./ui_mainwindow.h"
 #include "cv-helper.hpp"
 
+void MainWindow::startPipeline() {
+    // Stop the pipeline if it's already running
+    if (isPipeStarted) {
+        pipe.stop();
+        isPipeStarted = false;
+    }
+
+    // Configure the pipeline based on the current frame type
+    rs2::config cfg;
+    switch(currentFrameType) {
+    case FrameType::DEPTH:
+        cfg.enable_stream(RS2_STREAM_DEPTH, 1280, 720, RS2_FORMAT_Z16, 30);
+        break;
+    case FrameType::COLOR:
+        cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_RGB8, 30);
+        break;
+    }
+
+    // Start the pipeline with the new configuration
+    pipe.start(cfg);
+    isPipeStarted = true;
+}
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -12,19 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->frameSelectionBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateFrameType(int)));
 
     // Initialize RealSense pipeline
-    rs2::config cfg;
-    switch(currentFrameType){
-    case FrameType::DEPTH:
-        cfg.enable_stream(RS2_STREAM_DEPTH, 848, 480, RS2_FORMAT_Z16, 30);
-        break;
-
-    case FrameType::COLOR:
-        cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_RGB8, 30);
-        break;
-    }
-
-
-    pipe.start(cfg);
+    startPipeline();  // Use the new function to start the pipeline
 
     // Set up the timer to call updateFrame 30 times per second
     timer = new QTimer(this);
@@ -94,6 +105,7 @@ void MainWindow::updateFrameType(int index) {
         // Handle other frame types as needed
     }
 
+    startPipeline();  // Restart the pipeline with the new frame type
 }
 
 

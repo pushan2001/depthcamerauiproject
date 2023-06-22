@@ -36,6 +36,10 @@ private:
     QTimer *timer; // Timer for updating frames
     FrameType currentFrameType = FrameType::DEPTH; // Variable to hold the current frame type
 
+    bool isPipeStarted = false; // New variable to keep track of pipeline status
+
+    void startPipeline(); // New function to start the pipeline
+
 private slots:
     void updateFrameType(int index);
 };
