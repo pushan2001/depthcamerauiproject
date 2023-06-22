@@ -46,6 +46,11 @@
       <string>Colour</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Infrared</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

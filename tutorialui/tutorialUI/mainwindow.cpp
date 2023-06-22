@@ -18,6 +18,9 @@ void MainWindow::startPipeline() {
     case FrameType::COLOR:
         cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_RGB8, 30);
         break;
+    case FrameType::INFRARED:
+        cfg.enable_stream(RS2_STREAM_INFRARED, 1280, 720, RS2_FORMAT_Y8, 30);
+        break;
     }
 
     // Start the pipeline with the new configuration
@@ -83,6 +86,16 @@ void MainWindow::updateFrame()
         }
         break;
 
+    case FrameType::INFRARED:
+        // Make sure color frame exists before getting it
+        if(data.first_or_default(RS2_STREAM_INFRARED)){
+            frame = data.get_infrared_frame(); // Find the color data
+        } else {
+            qDebug() << "Infrared frame not found";
+            return;
+        }
+        break;
+
         // Handle other frame types as needed
     }
 
@@ -101,6 +114,9 @@ void MainWindow::updateFrameType(int index) {
         break;
     case 1:
         currentFrameType = FrameType::COLOR;
+        break;
+    case 2:
+        currentFrameType = FrameType::INFRARED;
         break;
         // Handle other frame types as needed
     }

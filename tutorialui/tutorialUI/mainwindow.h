@@ -17,7 +17,8 @@ class MainWindow : public QMainWindow
 public:
     enum class FrameType {
         DEPTH,
-        COLOR
+        COLOR,
+        INFRARED
         // Add other frame types as needed
     };
 

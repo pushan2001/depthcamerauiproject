@@ -42,6 +42,7 @@ public:
         frameSelectionBox = new QComboBox(centralwidget);
         frameSelectionBox->addItem(QString());
         frameSelectionBox->addItem(QString());
+        frameSelectionBox->addItem(QString());
         frameSelectionBox->setObjectName("frameSelectionBox");
         frameSelectionBox->setGeometry(QRect(750, 70, 79, 23));
         MainWindow->setCentralWidget(centralwidget);
@@ -64,6 +65,7 @@ public:
         imageLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         frameSelectionBox->setItemText(0, QCoreApplication::translate("MainWindow", "Depth", nullptr));
         frameSelectionBox->setItemText(1, QCoreApplication::translate("MainWindow", "Colour", nullptr));
+        frameSelectionBox->setItemText(2, QCoreApplication::translate("MainWindow", "Infrared", nullptr));
 
     } // retranslateUi
 
