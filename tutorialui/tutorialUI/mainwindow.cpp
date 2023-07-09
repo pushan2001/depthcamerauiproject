@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect the QComboBox signal to the updateFrameType slot
     connect(ui->frameSelectionBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateFrameType(int)));
+    connect(ui ->recordButton, &QPushButton::toggled, this, &MainWindow::on_recordButton_toggled);
 
     // Initialize RealSense pipeline
     startPipeline();  // Use the new function to start the pipeline
@@ -105,6 +106,10 @@ void MainWindow::updateFrame()
 
     // Display the image
     displayImage(dep_mat);
+
+    if(isRecording){
+        captureFrame();
+    }
 }
 
 
@@ -140,4 +145,86 @@ void MainWindow::displayImage(const cv::Mat &img)
 
     // Resize the QLabel to fit the image
     ui->imageLabel->resize(ui->imageLabel->pixmap().size());
+}
+
+void MainWindow::on_recordButton_toggled(bool checked){
+    if (checked) {
+        // Button is checked, start recording frames
+        isRecording = true;
+    } else {
+        // Button is not checked, stop recording frames
+        isRecording = false;
+
+        //When recording is stopped, save the recorded frames
+        saveFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.bin");
+
+        //Clear the recorded frames
+        frames.clear();
+    }
+}
+
+void MainWindow::captureFrame(){
+    rs2::align align_to(RS2_STREAM_COLOR);
+    auto data = pipe.wait_for_frames();
+    data = align_to.process(data);
+
+    //Check if the frame is available
+    if(!data){
+        qDebug() << "No data from frame";
+        return;
+    }
+
+    //Get the right type of frame
+    rs2::frame frame;
+    rs2::colorizer color_map;
+    switch (currentFrameType) {
+    case FrameType::DEPTH:
+        // Make sure depth frame exists before getting it
+        if(data.first_or_default(RS2_STREAM_DEPTH)){
+            frame = color_map.colorize(data.get_depth_frame()); // Find and colorize the depth data
+        } else {
+            qDebug() << "Depth frame not found";
+            return;
+        }
+        break;
+
+    case FrameType::COLOR:
+        // Make sure color frame exists before getting it
+        if(data.first_or_default(RS2_STREAM_COLOR)){
+            frame = data.get_color_frame(); // Find the color data
+        } else {
+            qDebug() << "Color frame not found";
+            return;
+        }
+        break;
+
+    case FrameType::INFRARED:
+        // Make sure color frame exists before getting it
+        if(data.first_or_default(RS2_STREAM_INFRARED)){
+            frame = data.get_infrared_frame(); // Find the color data
+        } else {
+            qDebug() << "Infrared frame not found";
+            return;
+        }
+        break;
+
+        // Handle other frame types as needed
+    }
+
+    // Convert the frame to a cv::Mat
+    cv::Mat mat = frame_to_mat(frame);
+
+    //Push this frame onto our vector of captures frames
+    frames.push_back(mat.clone());
+
+}
+
+void MainWindow::saveFrames(const std::string& filename) {
+    std::ofstream outFile(filename, std::ios::binary);
+
+    for (const auto& frame : frames) {
+        outFile.write((char*)frame.data, frame.total() * frame.elemSize());
+    }
+
+    outFile.close();
 }

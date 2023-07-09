@@ -5,6 +5,8 @@
 #include <QTimer>
 #include <opencv2/opencv.hpp>
 #include <librealsense2/rs.hpp>
+#include <fstream>
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +30,7 @@ public:
     // Function to display the image
     void displayImage(const cv::Mat &img);
 
+    //slot functions are called in response to a particular signal, specially for qt's widgets
 public slots:
     void updateFrame();
 
@@ -36,13 +39,21 @@ private:
     rs2::pipeline pipe; // Pipeline for RealSense
     QTimer *timer; // Timer for updating frames
     FrameType currentFrameType = FrameType::DEPTH; // Variable to hold the current frame type
+    bool isRecording = false; //Variable to keep track of recording status
 
     bool isPipeStarted = false; // New variable to keep track of pipeline status
 
     void startPipeline(); // New function to start the pipeline
 
+    std::vector<cv::Mat> frames; // Variable to store captured frames
+
+    void captureFrame(); // Function to capture a frame
+
+    void saveFrames(const std::string& filename); // Function to save frames to a file
+
 private slots:
     void updateFrameType(int index);
+    void on_recordButton_toggled(bool checked);
 };
 
 #endif // MAINWINDOW_H

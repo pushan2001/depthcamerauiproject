@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,6 +27,7 @@ public:
     QWidget *centralwidget;
     QLabel *imageLabel;
     QComboBox *frameSelectionBox;
+    QPushButton *recordButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -45,6 +47,10 @@ public:
         frameSelectionBox->addItem(QString());
         frameSelectionBox->setObjectName("frameSelectionBox");
         frameSelectionBox->setGeometry(QRect(750, 70, 79, 23));
+        recordButton = new QPushButton(centralwidget);
+        recordButton->setObjectName("recordButton");
+        recordButton->setGeometry(QRect(750, 120, 80, 23));
+        recordButton->setCheckable(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -67,6 +73,7 @@ public:
         frameSelectionBox->setItemText(1, QCoreApplication::translate("MainWindow", "Colour", nullptr));
         frameSelectionBox->setItemText(2, QCoreApplication::translate("MainWindow", "Infrared", nullptr));
 
+        recordButton->setText(QCoreApplication::translate("MainWindow", "Record", nullptr));
     } // retranslateUi
 
 };
