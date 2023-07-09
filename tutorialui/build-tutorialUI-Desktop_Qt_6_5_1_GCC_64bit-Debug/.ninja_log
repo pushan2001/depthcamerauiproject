@@ -55,3 +55,13 @@
 289	2418	1687413399861071811	CMakeFiles/tutorialUI.dir/tutorialUI_autogen/mocs_compilation.cpp.o	839fa6e5b1f24047
 289	2871	1687413400313085891	CMakeFiles/tutorialUI.dir/mainwindow.cpp.o	8eca85a898688ec2
 2871	3421	1687413400861102962	tutorialUI	f3e0c27491131b6b
+0	5	0	CMakeFiles/clean.additional	e6d819916f37395d
+5	9	0	clean	a31eedcededa8236
+1	286	1688883801518954269	tutorialUI_autogen/timestamp	818b44f1091123f9
+1	286	1688883801518954269	tutorialUI_autogen/mocs_compilation.cpp	818b44f1091123f9
+1	286	1688883801518954269	/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/timestamp	818b44f1091123f9
+1	286	1688883801518954269	/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/mocs_compilation.cpp	818b44f1091123f9
+286	2346	1688883803582991571	CMakeFiles/tutorialUI.dir/tutorialUI_autogen/mocs_compilation.cpp.o	839fa6e5b1f24047
+287	2350	1688883803586991643	CMakeFiles/tutorialUI.dir/main.cpp.o	5561f07f0056f495
+287	2837	1688883804071000391	CMakeFiles/tutorialUI.dir/mainwindow.cpp.o	8eca85a898688ec2
+2837	3425	1688883804659011018	tutorialUI	f3e0c27491131b6b

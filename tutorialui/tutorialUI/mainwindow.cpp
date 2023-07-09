@@ -65,11 +65,12 @@ void MainWindow::updateFrame()
     }
 
     rs2::frame frame;
+    rs2::colorizer color_map;
     switch (currentFrameType) {
     case FrameType::DEPTH:
         // Make sure depth frame exists before getting it
         if(data.first_or_default(RS2_STREAM_DEPTH)){
-            frame = data.get_depth_frame(); // Find and colorize the depth data
+            frame = color_map.colorize(data.get_depth_frame()); // Find and colorize the depth data
         } else {
             qDebug() << "Depth frame not found";
             return;
