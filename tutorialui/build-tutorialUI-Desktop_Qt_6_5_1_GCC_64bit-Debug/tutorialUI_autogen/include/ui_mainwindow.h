@@ -28,6 +28,7 @@ public:
     QLabel *imageLabel;
     QComboBox *frameSelectionBox;
     QPushButton *recordButton;
+    QPushButton *loadButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,6 +52,10 @@ public:
         recordButton->setObjectName("recordButton");
         recordButton->setGeometry(QRect(750, 120, 80, 23));
         recordButton->setCheckable(true);
+        loadButton = new QPushButton(centralwidget);
+        loadButton->setObjectName("loadButton");
+        loadButton->setGeometry(QRect(750, 170, 80, 23));
+        loadButton->setCheckable(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -74,6 +79,7 @@ public:
         frameSelectionBox->setItemText(2, QCoreApplication::translate("MainWindow", "Infrared", nullptr));
 
         recordButton->setText(QCoreApplication::translate("MainWindow", "Record", nullptr));
+        loadButton->setText(QCoreApplication::translate("MainWindow", "Load", nullptr));
     } // retranslateUi
 
 };
