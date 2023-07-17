@@ -51,6 +51,8 @@ private:
 
     void saveFrames(const std::string& filename); // Function to save frames to a file
 
+    void loadFrames(const std::string& filename); //Funcion to read saved frame files.
+
 private slots:
     void updateFrameType(int index);
     void on_recordButton_toggled(bool checked);

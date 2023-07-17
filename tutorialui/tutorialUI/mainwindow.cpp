@@ -156,7 +156,7 @@ void MainWindow::on_recordButton_toggled(bool checked){
         isRecording = false;
 
         //When recording is stopped, save the recorded frames
-        saveFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.bin");
+        saveFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.xml");
 
         //Clear the recorded frames
         frames.clear();
@@ -220,11 +220,39 @@ void MainWindow::captureFrame(){
 }
 
 void MainWindow::saveFrames(const std::string& filename) {
-    std::ofstream outFile(filename, std::ios::binary);
+    cv::FileStorage fs(filename, cv::FileStorage::WRITE);
 
-    for (const auto& frame : frames) {
-        outFile.write((char*)frame.data, frame.total() * frame.elemSize());
+    for (size_t i = 0; i < frames.size(); ++i) {
+        std::ostringstream ss;
+        ss << "frame_" << i;
+
+        // Write the matrix
+        fs << ss.str() << frames[i];
     }
 
-    outFile.close();
+    fs.release();
+}
+
+void MainWindow::loadFrames(const std::string& filename) {
+    cv::FileStorage fs(filename, cv::FileStorage::READ);
+
+    frames.clear();
+
+    int i = 0;
+    while (true) {
+        std::ostringstream ss;
+        ss << "frame_" << i;
+
+        cv::Mat mat;
+        fs[ss.str()] >> mat;
+
+        if (mat.empty()) {
+            break;
+        }
+
+        frames.push_back(mat);
+        ++i;
+    }
+
+    fs.release();
 }
