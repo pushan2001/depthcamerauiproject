@@ -7,8 +7,6 @@
 #include <librealsense2/rs.hpp>
 #include <fstream>
 #include <vector>
-#include <QFile>
-#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -45,24 +43,19 @@ private:
 
     bool isPipeStarted = false; // New variable to keep track of pipeline status
 
-    int frameIndex;
-
-    bool isLoading;
-
     void startPipeline(); // New function to start the pipeline
 
     std::vector<cv::Mat> frames; // Variable to store captured frames
 
     void captureFrame(); // Function to capture a frame
 
-    bool saveFrames(const std::string& filename); // Function to save frames to a file
+    void saveFrames(const std::string& filename); // Function to save frames to a file
 
     void loadFrames(const std::string& filename); //Funcion to read saved frame files.
 
 private slots:
     void updateFrameType(int index);
     void on_recordButton_toggled(bool checked);
-    void on_loadButton_toggled(bool checked);
 };
 
 #endif // MAINWINDOW_H

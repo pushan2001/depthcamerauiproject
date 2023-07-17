@@ -6,7 +6,6 @@
  mmc:Q_OBJECT
  mdp:/home/alam/depthcamerauiproject/tutorialui/tutorialUI/mainwindow.h
  mdp:/home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/moc_predefs.h
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QFile
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QTimer
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20memory.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20type_traits.h
@@ -39,8 +38,6 @@
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdatastream.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdebug.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qexceptionhandling.h
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qfile.h
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qfiledevice.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qflags.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qfloat16.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qforeach.h
@@ -50,7 +47,6 @@
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qglobalstatic.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qhash.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qhashfunctions.h
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiodevice.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiodevicebase.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiterable.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiterator.h
@@ -145,10 +141,7 @@
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtransform.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qwindowdefs.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMainWindow
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMessageBox
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qdialog.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qmainwindow.h
- mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qmessagebox.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qsizepolicy.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qtabwidget.h
  mdp:/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qtwidgets-config.h
@@ -191,10 +184,6 @@
  mdp:/usr/include/c++/11/bits/exception.h
  mdp:/usr/include/c++/11/bits/exception_defines.h
  mdp:/usr/include/c++/11/bits/exception_ptr.h
- mdp:/usr/include/c++/11/bits/fs_dir.h
- mdp:/usr/include/c++/11/bits/fs_fwd.h
- mdp:/usr/include/c++/11/bits/fs_ops.h
- mdp:/usr/include/c++/11/bits/fs_path.h
  mdp:/usr/include/c++/11/bits/fstream.tcc
  mdp:/usr/include/c++/11/bits/functexcept.h
  mdp:/usr/include/c++/11/bits/functional_hash.h
@@ -281,7 +270,6 @@
  mdp:/usr/include/c++/11/climits
  mdp:/usr/include/c++/11/clocale
  mdp:/usr/include/c++/11/cmath
- mdp:/usr/include/c++/11/codecvt
  mdp:/usr/include/c++/11/compare
  mdp:/usr/include/c++/11/complex
  mdp:/usr/include/c++/11/concepts
@@ -305,7 +293,6 @@
  mdp:/usr/include/c++/11/ext/numeric_traits.h
  mdp:/usr/include/c++/11/ext/string_conversions.h
  mdp:/usr/include/c++/11/ext/type_traits.h
- mdp:/usr/include/c++/11/filesystem
  mdp:/usr/include/c++/11/fstream
  mdp:/usr/include/c++/11/functional
  mdp:/usr/include/c++/11/initializer_list
@@ -337,7 +324,6 @@
  mdp:/usr/include/c++/11/streambuf
  mdp:/usr/include/c++/11/string
  mdp:/usr/include/c++/11/string_view
- mdp:/usr/include/c++/11/system_error
  mdp:/usr/include/c++/11/tr1/bessel_function.tcc
  mdp:/usr/include/c++/11/tr1/beta_function.tcc
  mdp:/usr/include/c++/11/tr1/ell_integral.tcc

@@ -1,6 +1,5 @@
 /home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/alam/depthcamerauiproject/tutorialui/tutorialUI/mainwindow.h \
   /home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/moc_predefs.h \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QFile \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QTimer \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20memory.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20type_traits.h \
@@ -33,8 +32,6 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdatastream.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdebug.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qexceptionhandling.h \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qfile.h \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qfiledevice.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qflags.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qfloat16.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qforeach.h \
@@ -44,7 +41,6 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qglobalstatic.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qhash.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qhashfunctions.h \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiodevice.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiodevicebase.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiterable.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qiterator.h \
@@ -139,10 +135,7 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtransform.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qwindowdefs.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMainWindow \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMessageBox \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qdialog.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qmainwindow.h \
-  /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qmessagebox.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qsizepolicy.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
@@ -185,10 +178,6 @@
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
   /usr/include/c++/11/bits/exception_ptr.h \
-  /usr/include/c++/11/bits/fs_dir.h \
-  /usr/include/c++/11/bits/fs_fwd.h \
-  /usr/include/c++/11/bits/fs_ops.h \
-  /usr/include/c++/11/bits/fs_path.h \
   /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/bits/functexcept.h \
   /usr/include/c++/11/bits/functional_hash.h \
@@ -275,7 +264,6 @@
   /usr/include/c++/11/climits \
   /usr/include/c++/11/clocale \
   /usr/include/c++/11/cmath \
-  /usr/include/c++/11/codecvt \
   /usr/include/c++/11/compare \
   /usr/include/c++/11/complex \
   /usr/include/c++/11/concepts \
@@ -299,7 +287,6 @@
   /usr/include/c++/11/ext/numeric_traits.h \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/ext/type_traits.h \
-  /usr/include/c++/11/filesystem \
   /usr/include/c++/11/fstream \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/initializer_list \
@@ -331,7 +318,6 @@
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
   /usr/include/c++/11/string_view \
-  /usr/include/c++/11/system_error \
   /usr/include/c++/11/tr1/bessel_function.tcc \
   /usr/include/c++/11/tr1/beta_function.tcc \
   /usr/include/c++/11/tr1/ell_integral.tcc \

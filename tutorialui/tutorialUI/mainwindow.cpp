@@ -33,14 +33,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    frameIndex = 0;
-    isLoading = false; //These are check variables for the load function
 
     // Connect the QComboBox signal to the updateFrameType slot
     connect(ui->frameSelectionBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateFrameType(int)));
     connect(ui ->recordButton, &QPushButton::toggled, this, &MainWindow::on_recordButton_toggled);
-    connect(ui->loadButton, &QPushButton::toggled, this, &MainWindow::on_loadButton_toggled);
-
 
     // Initialize RealSense pipeline
     startPipeline();  // Use the new function to start the pipeline
@@ -114,12 +110,6 @@ void MainWindow::updateFrame()
     if(isRecording){
         captureFrame();
     }
-
-    // If isLoading is true, display the loaded frames in a loop
-    if (isLoading && !frames.empty()) {
-        displayImage(frames[frameIndex]);
-        frameIndex = (frameIndex + 1) % frames.size();
-    }
 }
 
 
@@ -165,14 +155,11 @@ void MainWindow::on_recordButton_toggled(bool checked){
         // Button is not checked, stop recording frames
         isRecording = false;
 
-        qDebug() << "Number of frames to save: " << frames.size();
+        //When recording is stopped, save the recorded frames
+        saveFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.xml");
 
-        // When recording is stopped, save the recorded frames
-        bool saved = saveFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.xml");
-        qDebug() << "Frames saved successfully: " << saved;
-
-        // Clear the recorded frames
-        //frames.clear();
+        //Clear the recorded frames
+        frames.clear();
     }
 }
 
@@ -230,16 +217,10 @@ void MainWindow::captureFrame(){
     //Push this frame onto our vector of captures frames
     frames.push_back(mat.clone());
 
-    qDebug() << "Frames captured, total frames:" << frames.size();
-
 }
 
-bool MainWindow::saveFrames(const std::string& filename) {
+void MainWindow::saveFrames(const std::string& filename) {
     cv::FileStorage fs(filename, cv::FileStorage::WRITE);
-    if (!fs.isOpened()) {
-        qDebug() << "Failed to open" << QString::fromStdString(filename);
-        return false;
-    }
 
     for (size_t i = 0; i < frames.size(); ++i) {
         std::ostringstream ss;
@@ -250,7 +231,6 @@ bool MainWindow::saveFrames(const std::string& filename) {
     }
 
     fs.release();
-    return true;
 }
 
 void MainWindow::loadFrames(const std::string& filename) {
@@ -275,16 +255,4 @@ void MainWindow::loadFrames(const std::string& filename) {
     }
 
     fs.release();
-}
-
-void MainWindow::on_loadButton_toggled(bool checked){
-    if (checked) {
-        // Button is checked, start loading frames
-        loadFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.xml");
-        isLoading = true;
-        frameIndex = 0;
-    } else {
-        // Button is not checked, stop loading frames
-        isLoading = false;
-    }
 }
