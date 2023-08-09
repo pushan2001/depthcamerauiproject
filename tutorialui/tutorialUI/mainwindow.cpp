@@ -301,20 +301,36 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void MainWindow::handleMouseMoveOnImageLabel(const QPoint &pos) {
-    if (currentFrameType != FrameType::DEPTH) {
-        return;
+    int x = static_cast<int>(pos.x() * (1280/static_cast<float>(ui->imageLabel->width())));
+    int y = static_cast<int>(pos.y() * (720/static_cast<float>(ui->imageLabel->height())));
+
+    if (currentFrameType == FrameType::DEPTH) {
+        if (!cached_data) {
+            qDebug() << "No cached data available";
+            return;
+        }
+
+        if (auto depthFrame = cached_data.first_or_default(RS2_STREAM_DEPTH)) {
+            float depth = depthFrame.as<rs2::depth_frame>().get_distance(x, y);
+            // Display the data
+            ui->statusbar->showMessage("Depth: " + QString::number(depth));
+        } else {
+            qDebug() << "Depth frame not found";
+        }
+    } else if (currentFrameType == FrameType::INFRARED) {
+        if (!cached_data) {
+            qDebug() << "No cached data available";
+            return;
+        }
+
+        // Get IR intensity
+        rs2::frame ir_frame = cached_data.first(RS2_STREAM_INFRARED);
+        cv::Mat ir_mat = frame_to_mat(ir_frame);
+        ushort intensity = ir_mat.at<ushort>(y, x);
+
+        // Display both intensity and depth value
+        ui->statusbar->showMessage("IR Intensity: " + QString::number(intensity));
     }
 
-    // Map pos to depth frame
-    int depthX = static_cast<int>(pos.x() * (1280/static_cast<float>(ui->imageLabel->width())));
-    int depthY = static_cast<int>(pos.y() * (720/static_cast<float>(ui->imageLabel->height())));
-
-    // Use cached_data instead of fetching again
-    if(auto depthFrame = cached_data.first_or_default(RS2_STREAM_DEPTH)) {
-        float depth = depthFrame.as<rs2::depth_frame>().get_distance(depthX, depthY);
-        //Display the data
-        ui->statusbar->showMessage("Depth: " + QString::number(depth) + " metres");
-    } else {
-        qDebug() << "Depth frame not found";
-    }
 }
+
