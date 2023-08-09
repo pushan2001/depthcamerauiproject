@@ -40,12 +40,8 @@ else()
     endif()
 endif()
 
-# Ensure your project has access to the Qt definitions and libraries
-target_link_libraries(tutorialUI PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-
-# Link the dependencies
+# Link the dependencies (Qt::Widgets linked once)
 target_link_libraries(tutorialUI PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${OpenCV_LIBS} ${realsense2_LIBRARY})
-
 
 set_target_properties(tutorialUI PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

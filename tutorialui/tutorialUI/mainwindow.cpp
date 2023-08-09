@@ -33,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //enable mouse tracking for imagelabel
+    ui -> imageLabel->setMouseTracking(true);
+    //Since we tracking mouse events on a specific Qlabel, we will need to install an eventfilter method
+    ui -> imageLabel -> installEventFilter(this);
+
     frameIndex = 0;
     isLoading = false; //These are check variables for the load function
 
@@ -62,6 +68,7 @@ void MainWindow::updateFrame()
     rs2::align align_to(RS2_STREAM_COLOR);
     auto data = pipe.wait_for_frames();
     data = align_to.process(data);
+    cached_data = data;  // Cache the processed frame
 
     // Check if the frame is available.
     if (!data) {
@@ -176,25 +183,21 @@ void MainWindow::on_recordButton_toggled(bool checked){
     }
 }
 
-void MainWindow::captureFrame(){
-    rs2::align align_to(RS2_STREAM_COLOR);
-    auto data = pipe.wait_for_frames();
-    data = align_to.process(data);
-
-    //Check if the frame is available
-    if(!data){
+void MainWindow::captureFrame() {
+    // Use cached_data instead of fetching again
+    if (!cached_data) {
         qDebug() << "No data from frame";
         return;
     }
 
-    //Get the right type of frame
+    // Get the right type of frame
     rs2::frame frame;
     rs2::colorizer color_map;
     switch (currentFrameType) {
     case FrameType::DEPTH:
         // Make sure depth frame exists before getting it
-        if(data.first_or_default(RS2_STREAM_DEPTH)){
-            frame = color_map.colorize(data.get_depth_frame()); // Find and colorize the depth data
+        if(cached_data.first_or_default(RS2_STREAM_DEPTH)){
+            frame = color_map.colorize(cached_data.get_depth_frame()); // Find and colorize the depth data
         } else {
             qDebug() << "Depth frame not found";
             return;
@@ -203,8 +206,8 @@ void MainWindow::captureFrame(){
 
     case FrameType::COLOR:
         // Make sure color frame exists before getting it
-        if(data.first_or_default(RS2_STREAM_COLOR)){
-            frame = data.get_color_frame(); // Find the color data
+        if(cached_data.first_or_default(RS2_STREAM_COLOR)){
+            frame = cached_data.get_color_frame(); // Find the color data
         } else {
             qDebug() << "Color frame not found";
             return;
@@ -212,9 +215,9 @@ void MainWindow::captureFrame(){
         break;
 
     case FrameType::INFRARED:
-        // Make sure color frame exists before getting it
-        if(data.first_or_default(RS2_STREAM_INFRARED)){
-            frame = data.get_infrared_frame(); // Find the color data
+        // Make sure infrared frame exists before getting it
+        if(cached_data.first_or_default(RS2_STREAM_INFRARED)){
+            frame = cached_data.get_infrared_frame(); // Find the infrared data
         } else {
             qDebug() << "Infrared frame not found";
             return;
@@ -227,12 +230,12 @@ void MainWindow::captureFrame(){
     // Convert the frame to a cv::Mat
     cv::Mat mat = frame_to_mat(frame);
 
-    //Push this frame onto our vector of captures frames
+    // Push this frame onto our vector of captured frames
     frames.push_back(mat.clone());
 
     qDebug() << "Frames captured, total frames:" << frames.size();
-
 }
+
 
 bool MainWindow::saveFrames(const std::string& filename) {
     cv::FileStorage fs(filename, cv::FileStorage::WRITE);
@@ -286,5 +289,32 @@ void MainWindow::on_loadButton_toggled(bool checked){
     } else {
         // Button is not checked, stop loading frames
         isLoading = false;
+    }
+}
+
+bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->imageLabel && event->type() == QEvent::MouseMove) {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+        handleMouseMoveOnImageLabel(mouseEvent->pos());
+    }
+    return QMainWindow::eventFilter(watched, event);
+}
+
+void MainWindow::handleMouseMoveOnImageLabel(const QPoint &pos) {
+    if (currentFrameType != FrameType::DEPTH) {
+        return;
+    }
+
+    // Map pos to depth frame
+    int depthX = static_cast<int>(pos.x() * (1280/static_cast<float>(ui->imageLabel->width())));
+    int depthY = static_cast<int>(pos.y() * (720/static_cast<float>(ui->imageLabel->height())));
+
+    // Use cached_data instead of fetching again
+    if(auto depthFrame = cached_data.first_or_default(RS2_STREAM_DEPTH)) {
+        float depth = depthFrame.as<rs2::depth_frame>().get_distance(depthX, depthY);
+        //Display the data
+        ui->statusbar->showMessage("Depth: " + QString::number(depth) + " metres");
+    } else {
+        qDebug() << "Depth frame not found";
     }
 }

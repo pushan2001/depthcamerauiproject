@@ -1,5 +1,10 @@
 tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QFile \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QList \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QObject \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QRect \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QSize \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QSizeF \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/QTimer \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20memory.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20type_traits.h \
@@ -28,6 +33,7 @@ tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcontainerinfo.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcontainertools_impl.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcontiguouscache.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcoreevent.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdarwinhelpers.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdatastream.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdebug.h \
@@ -58,6 +64,7 @@ tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qmetatype.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qminmax.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qnamespace.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qnativeinterface.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qnumeric.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qobject.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qobject_impl.h \
@@ -66,6 +73,7 @@ tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qoverload.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qpair.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qpoint.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qpointer.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qprocessordetection.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qrect.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qrefcount.h \
@@ -108,34 +116,44 @@ tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qtversionchecks.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qtypeinfo.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qtypes.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qurl.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qutf8stringview.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qvariant.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qvarlengtharray.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qversiontagging.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtCore/qxptype_traits.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/QMouseEvent \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/QTransform \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qaction.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qbitmap.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qbrush.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qcolor.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qcursor.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qevent.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qeventpoint.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qfont.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qfontinfo.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qfontmetrics.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qicon.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qimage.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qinputdevice.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qkeysequence.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpaintdevice.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpalette.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpixelformat.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpixmap.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpointingdevice.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpolygon.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qregion.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qrgb.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qrgba64.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qscreen.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtgui-config.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtguiexports.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtguiglobal.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtransform.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qvector2d.h \
+	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qvectornd.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtGui/qwindowdefs.h \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMainWindow \
 	/home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMessageBox \
@@ -358,76 +376,22 @@ tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/6.5.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	/home/alam/Qt/6.5.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/home/alam/Qt/6.5.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeSystem.cmake.in \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckLibraryExists.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/FeatureSummary.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/FindOpenGL.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake \
@@ -439,9 +403,7 @@ tutorialUI_autogen/timestamp: \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/MacroAddFileDependencies.cmake \
-	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake \
 	/home/alam/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux.cmake \

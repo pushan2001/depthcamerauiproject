@@ -1,6 +1,11 @@
 /home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/alam/depthcamerauiproject/tutorialui/tutorialUI/mainwindow.h \
   /home/alam/depthcamerauiproject/tutorialui/build-tutorialUI-Desktop_Qt_6_5_1_GCC_64bit-Debug/tutorialUI_autogen/moc_predefs.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QFile \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QList \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QObject \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QRect \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QSize \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QSizeF \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/QTimer \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20memory.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/q20type_traits.h \
@@ -29,6 +34,7 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcontainertools_impl.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcontiguouscache.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qcoreevent.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdatastream.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qdebug.h \
@@ -59,6 +65,7 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qmetatype.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qminmax.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qnamespace.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qnativeinterface.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qnumeric.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qobject.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qobject_impl.h \
@@ -67,6 +74,7 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qoverload.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qpair.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qpoint.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qpointer.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qprocessordetection.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qrect.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qrefcount.h \
@@ -109,34 +117,44 @@
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qtversionchecks.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qtypeinfo.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qtypes.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qurl.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qutf8stringview.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qvariant.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qvarlengtharray.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qversiontagging.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtCore/qxptype_traits.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/QMouseEvent \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/QTransform \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qaction.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qbitmap.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qbrush.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qcolor.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qcursor.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qevent.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qeventpoint.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qfont.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qfontinfo.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qfontmetrics.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qicon.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qimage.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qinputdevice.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qkeysequence.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpaintdevice.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpalette.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpixelformat.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpixmap.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpointingdevice.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qpolygon.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qregion.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qrgb.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qrgba64.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qscreen.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtgui-config.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtguiexports.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtguiglobal.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qtransform.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qvector2d.h \
+  /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qvectornd.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtGui/qwindowdefs.h \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMainWindow \
   /home/alam/Qt/6.5.1/gcc_64/include/QtWidgets/QMessageBox \

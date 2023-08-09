@@ -9,6 +9,8 @@
 #include <vector>
 #include <QFile>
 #include <QMessageBox>
+#include <QMouseEvent>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -36,9 +38,13 @@ public:
 public slots:
     void updateFrame();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event);
+
 private:
     Ui::MainWindow *ui;
     rs2::pipeline pipe; // Pipeline for RealSense
+    rs2::frameset cached_data;
     QTimer *timer; // Timer for updating frames
     FrameType currentFrameType = FrameType::DEPTH; // Variable to hold the current frame type
     bool isRecording = false; //Variable to keep track of recording status
@@ -59,10 +65,13 @@ private:
 
     void loadFrames(const std::string& filename); //Funcion to read saved frame files.
 
+    void handleMouseMoveOnImageLabel(const QPoint &pos);
+
 private slots:
     void updateFrameType(int index);
     void on_recordButton_toggled(bool checked);
     void on_loadButton_toggled(bool checked);
 };
+
 
 #endif // MAINWINDOW_H
