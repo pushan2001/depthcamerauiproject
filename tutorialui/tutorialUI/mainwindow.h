@@ -47,6 +47,7 @@ private:
     rs2::frameset cached_data;
     QTimer *timer; // Timer for updating frames
     FrameType currentFrameType = FrameType::DEPTH; // Variable to hold the current frame type
+    std::vector<cv::Mat> frameBuffer;
     bool isRecording = false; //Variable to keep track of recording status
 
     bool isPipeStarted = false; // New variable to keep track of pipeline status
@@ -66,6 +67,9 @@ private:
     void loadFrames(const std::string& filename); //Funcion to read saved frame files.
 
     void handleMouseMoveOnImageLabel(const QPoint &pos);
+
+    const int BUFFER_SIZE = 50; // Adjust based on your system's capabilities
+
 
 private slots:
     void updateFrameType(int index);

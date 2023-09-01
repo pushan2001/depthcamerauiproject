@@ -44,8 +44,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect the QComboBox signal to the updateFrameType slot
     connect(ui->frameSelectionBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateFrameType(int)));
-    connect(ui ->recordButton, &QPushButton::toggled, this, &MainWindow::on_recordButton_toggled);
-    connect(ui->loadButton, &QPushButton::toggled, this, &MainWindow::on_loadButton_toggled);
+    //The line below is commented out because of this: https://stackoverflow.com/questions/34416103/function-connected-to-the-button-is-called-twice-after-one-click
+    //connect(ui ->recordButton, &QPushButton::toggled, this, &MainWindow::on_recordButton_toggled);
+   // connect(ui->loadButton, &QPushButton::toggled, this, &MainWindow::on_loadButton_toggled);
 
 
     // Initialize RealSense pipeline
@@ -164,26 +165,37 @@ void MainWindow::displayImage(const cv::Mat &img)
     ui->imageLabel->resize(ui->imageLabel->pixmap().size());
 }
 
-void MainWindow::on_recordButton_toggled(bool checked){
+void MainWindow::on_recordButton_toggled(bool checked) {
+    qDebug() << "on_recordButton_toggled called with value:" << checked;
     if (checked) {
-        // Button is checked, start recording frames
+        // Start Recording
         isRecording = true;
+        frames.clear(); // Clear any previous frames
     } else {
-        // Button is not checked, stop recording frames
+        // Stop Recording
         isRecording = false;
 
-        qDebug() << "Number of frames to save: " << frames.size();
+        // Filename logic
+        std::string filename = "/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.xml";
 
-        // When recording is stopped, save the recorded frames
-        bool saved = saveFrames("/home/alam/depthcamerauiproject/tutorialui/recordedFrames/frames.xml");
-        qDebug() << "Frames saved successfully: " << saved;
-
-        // Clear the recorded frames
-        //frames.clear();
+        // Save the recorded frames to an XML file
+        if (saveFrames(filename)) {
+            qDebug() << "Frames saved successfully!";
+            frames.clear();  // Clear the frames vector after saving
+        } else {
+            qDebug() << "Failed to save frames!";
+        }
     }
 }
 
+
+
 void MainWindow::captureFrame() {
+    if (!isRecording) {
+        // If we are not recording, we shouldn't capture frames.
+        return;
+    }
+
     // Use cached_data instead of fetching again
     if (!cached_data) {
         qDebug() << "No data from frame";
@@ -235,6 +247,7 @@ void MainWindow::captureFrame() {
 
     qDebug() << "Frames captured, total frames:" << frames.size();
 }
+
 
 
 bool MainWindow::saveFrames(const std::string& filename) {
